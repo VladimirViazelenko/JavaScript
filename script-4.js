@@ -31,6 +31,11 @@ let users = [
 ];
 let filterUsers = users.filter((item) => item.age < 18)
 console.log(filterUsers);
+let fullName = users.map((item) => item.firstname + " " + item.lastname);
+users = users.map((item) => {
+    item = {...item, fullName: item.firstname + " " + item.lastname}
+    return item;
+})
 let updUsers = users.map((item) => item.firstname + " " + item.lastname);
 console.log(updUsers);
 
@@ -55,10 +60,10 @@ addNumbers(arr, 153);
 
 // Exercise 6
 let source = { firstname: 'John', age: 30 };
-
 function sourseAssign {
-for (let i = 1; i < arguments.length; i++) {
-    let sourseAssign = extend(source, {firstname: 'John'}, {lastname: 'Doe'});
+for (let i = 1; i < source.length; i++) {
+    let option = source[i];
+    let sourseAssign = extens(target, {firstname: 'Tom'}, {lastname: 'Doe'});
     console.log(sourseAssign); 
   }
 }
@@ -78,7 +83,7 @@ function createTimer() {
     let time = performance.now() ;
 
     return function() {
-        return ++time;
+        return performance.now() - time;
     }
 }
 
