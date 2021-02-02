@@ -17,7 +17,7 @@ for (let i = 0; i < 10; i++) {
 let array = ['AngularJS', 'jQuery']
 array.unshift('Backbone.js');
 array.push('ReactJS', 'Vue.js');
-array[1] = 'CommonJS';
+arr.splice(1, 0, 'CommonJS');
 for (let i = 0; i < array.length; i++) {
     if (array[i] == 'jQuery') {
         alert ('Это здесь лишнее');
@@ -27,12 +27,13 @@ for (let i = 0; i < array.length; i++) {
 console.log(array);
 // Exercise 4 !
 let str = 'Как однажды Жак звонарь сломал фонарь головой';
-let arr = str.split(' ');
-arr.splice(1, 1);
-arr.splice(2, 0);
-arr.splice(3, 0, 'однажды');
-alert(str.join());
-alert(str);
+let arr = ' ';
+str = str.split(arr);
+str.splice(1, 1);
+str.splice(3, 0, 'однажды');
+str.splice(5, 1);
+str.push('фонарь');
+alert(str.join(' '));
 // Exercise 5
 let person = {
     name: 'Andrey', age: 23, gender: 'm' ,
@@ -62,11 +63,15 @@ if (user > dates.secondDate && user < dates.firstDate) {
 }
 // Exercise 8 !
 let arr = [];
-for (let i  = 0; i++) {
+for (let i  = 0; i < 10; i++) {
     arr.push(prompt());
-
 }
-    
+arr = arr.filter(Number);
+let sum = 0;
+for (let x = 0; x < arr.length; x++) {
+sum += +arr[x];
+}
+alert(sum);
 // Exercise 9
 let x = 0;
 let arr = [];
