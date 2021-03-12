@@ -8,12 +8,12 @@ const $coordinatesInside = createNode('div', getCoordinatesString(), );
 const $coordinatesBlock = createNode('div', getCoordinatesString(), );
 
 document.body.append($text, $coordinatesInside, $block, $coordinatesBlock);
-document.addEventListener("mousemove", function ({valueX, valueY}) {
-    $coordinatesInside.innerHTML = getCoordinatesString(valueX, valueY, );
+document.addEventListener("mousemove", function ({clientX, clientY}) {
+    $coordinatesInside.innerHTML = getCoordinatesString(clientX, clientY, );
 });
-$block.addEventListener("mousemove", function ({valueX, valueY}) {
-    const x = valueX - this.offsetLeft;
-    const y = valueY - this.offsetTop;
+$block.addEventListener("mousemove", function ({clientX, clientY}) {
+    const x = clientX - this.offsetLeft;
+    const y = clientY - this.offsetTop;
     $coordinatesBlock.innerHTML = getCoordinatesString(x, y);
 });
 
